@@ -15,6 +15,7 @@
 		9A80E5AE24D2BEFE00B5FBB8 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A80E5AD24D2BEFE00B5FBB8 /* SearchResult.swift */; };
 		9A80E5B524D2DF3400B5FBB8 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A80E5B424D2DF3400B5FBB8 /* SearchResultCell.xib */; };
 		9A80E5B724D2E3A900B5FBB8 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A80E5B624D2E3A900B5FBB8 /* SearchResultCell.swift */; };
+		9A80E5BD24D2E92900B5FBB8 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A80E5BB24D2E92900B5FBB8 /* NothingFoundCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		9A80E5AD24D2BEFE00B5FBB8 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		9A80E5B424D2DF3400B5FBB8 /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		9A80E5B624D2E3A900B5FBB8 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		9A80E5BB24D2E92900B5FBB8 /* NothingFoundCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,10 +109,27 @@
 		9A80E5B324D2DF0C00B5FBB8 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				9A80E5B424D2DF3400B5FBB8 /* SearchResultCell.xib */,
-				9A80E5B624D2E3A900B5FBB8 /* SearchResultCell.swift */,
+				9A80E5B924D2E8F800B5FBB8 /* NothingFoundCell */,
+				9A80E5B824D2E8E900B5FBB8 /* SearchResultCell */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		9A80E5B824D2E8E900B5FBB8 /* SearchResultCell */ = {
+			isa = PBXGroup;
+			children = (
+				9A80E5B624D2E3A900B5FBB8 /* SearchResultCell.swift */,
+				9A80E5B424D2DF3400B5FBB8 /* SearchResultCell.xib */,
+			);
+			path = SearchResultCell;
+			sourceTree = "<group>";
+		};
+		9A80E5B924D2E8F800B5FBB8 /* NothingFoundCell */ = {
+			isa = PBXGroup;
+			children = (
+				9A80E5BB24D2E92900B5FBB8 /* NothingFoundCell.xib */,
+			);
+			path = NothingFoundCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +193,7 @@
 				9A80E5A624D29FAF00B5FBB8 /* LaunchScreen.storyboard in Resources */,
 				9A80E5A324D29FAF00B5FBB8 /* Assets.xcassets in Resources */,
 				9A80E5B524D2DF3400B5FBB8 /* SearchResultCell.xib in Resources */,
+				9A80E5BD24D2E92900B5FBB8 /* NothingFoundCell.xib in Resources */,
 				9A80E5A124D29FAD00B5FBB8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
