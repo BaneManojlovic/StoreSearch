@@ -17,6 +17,13 @@ class SearchViewController: UIViewController {
     // MARK: - Properties
     var searchResults = [SearchResult]()
     var hasSearched = false
+    
+    // MARK: - Helper Struct
+    struct TableView {
+        struct CellIdentifiers {
+            static let searchResultCell = "SearchResultCell"
+        }
+    }
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -29,6 +36,10 @@ class SearchViewController: UIViewController {
     
     func setupUI() {
         tableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
+        
+        // registering tableview cell
+        let cellNib = UINib(nibName: TableView.CellIdentifiers.searchResultCell, bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.searchResultCell)
     }
     
     func setupDelegates() {
@@ -84,22 +95,17 @@ extension SearchViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "SearchResultCell"
         
-        var cell: UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
-        
-        if cell == nil {
-            cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellIdentifier)
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.searchResultCell, for: indexPath) as! SearchResultCell
         
         // Handle no search results for tableview
         if searchResults.count == 0 {
-            cell.textLabel!.text = "(Noting found)"
-            cell.detailTextLabel!.text = ""
+            cell.nameLabel.text = "(Noting found)"
+            cell.artistNameLabel.text = ""
         } else {
             let searchResult = searchResults[indexPath.row]
-            cell.textLabel!.text = searchResult.name
-            cell.detailTextLabel!.text = searchResult.artistName
+            cell.nameLabel.text = searchResult.name
+            cell.artistNameLabel.text = searchResult.artistName
         }
         
         return cell
@@ -120,5 +126,9 @@ extension SearchViewController: UITableViewDelegate {
         } else {
             return indexPath
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
 }
