@@ -8,10 +8,27 @@
 
 import UIKit
 
-class SearchResult {
+class ResultArray: Codable {
     
     // MARK: - Properties
-    var name = ""
-    var artistName = ""
-    
+    var resultCount = 0
+    var results = [SearchResult]()
 }
+
+class SearchResult: Codable, CustomStringConvertible {
+    
+  
+    
+    // MARK: - Properties
+    var artistName: String? = ""
+    var trackName: String? = ""
+    
+    var name: String {
+        return trackName ?? ""
+    }
+    // Propety needed for Conforming to CustomStringConvertible protocol
+    var description: String {
+        return "Name: \(name), Artist name: \(artistName ?? "None")"
+    }
+}
+

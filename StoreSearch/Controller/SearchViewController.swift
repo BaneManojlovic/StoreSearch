@@ -34,6 +34,7 @@ class SearchViewController: UIViewController {
         setupDelegates()
     }
     
+    // MARK: - Setup Methods
     func setupUI() {
         tableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
         searchBar.becomeFirstResponder()
@@ -44,8 +45,6 @@ class SearchViewController: UIViewController {
         
         cellNib = UINib(nibName: TableView.CellIdentifiers.nothingFoundCell, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.nothingFoundCell)
-        
-        
     }
     
     func setupDelegates() {
@@ -54,30 +53,65 @@ class SearchViewController: UIViewController {
         tableView.dataSource = self
     }
 
+    // MARK: - Helper Methods
+    func iTunesURL(searchText: String) -> URL {
+        let encodedText = searchText.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        let urlString = String(format: "https://itunes.apple.com/search?term=%@", encodedText)
+        let url = URL(string: urlString)
+        return url!
+    }
+    
+    func performStoreRequest(with url: URL) -> Data? {
+        do {
+            return try Data(contentsOf: url) // Ovo je tekst koji dobijam od servera
+        } catch {
+            print("Download Error: \(error.localizedDescription)")
+            showNetworkError()
+            return nil
+        }
+    }
+    
+    func parse(data: Data) -> [SearchResult] {
+        do {
+            let decoder = JSONDecoder()
+            let result = try decoder.decode(ResultArray.self, from: data)
+            return result.results
+        } catch {
+            print("JSON error: \(error)")
+            return []
+        }
+    }
+    
+    func showNetworkError() {
+        let alert = UIAlertController(title: "Whoops...",
+                                     message: "There was an error accessing the iTunes Store." + "Please try again.",
+                                     preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK",
+                                   style: .default,
+                                   handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 // MARK: - Conforming to UISearchBarDelegate procotol
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("The text is: \(searchBar.text!)")
-        
-        searchResults = []
-        
-        if searchBar.text! != "justin bieber" {
-            for i in 0...2 {
-                
-                let searchResult = SearchResult()
-                searchResult.name = String(format: "Fake result %d for", i)
-                searchResult.artistName = searchBar.text!
-                
-                searchResults.append(searchResult)
+        if !searchBar.text!.isEmpty {
+            searchBar.resignFirstResponder()
+            
+            hasSearched = true
+            searchResults = []
+            
+            let url = iTunesURL(searchText: searchBar.text!)
+            print("URL: '\(url)'")
+            if let data = performStoreRequest(with: url) {
+                let results = parse(data: data)
+                print("Received JSON string '\(results)'")
             }
+            tableView.reloadData()
         }
-        
-        hasSearched = true
-        tableView.reloadData()
-        searchBar.resignFirstResponder()
     }
     
     func position(for bar: UIBarPositioning) -> UIBarPosition {
