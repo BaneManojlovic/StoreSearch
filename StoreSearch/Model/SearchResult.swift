@@ -22,13 +22,20 @@ class SearchResult: Codable, CustomStringConvertible {
     // MARK: - Properties
     var artistName: String? = ""
     var trackName: String? = ""
+    var kind: String? = ""
+    var trackPrice: Double? = 0.0
+    var currency = ""
+    var artworkUrl60 = ""
+    var artworkUrl100 = ""
+    var trackViewUrl: String? = ""
+    var primaryGenreName = ""
     
     var name: String {
         return trackName ?? ""
     }
     // Propety needed for Conforming to CustomStringConvertible protocol
     var description: String {
-        return "Name: \(name), Artist name: \(artistName ?? "None")"
+        return "Kind: \(kind ?? "None"), Name: \(name), Artist name: \(artistName ?? "None")"
     }
 }
 
