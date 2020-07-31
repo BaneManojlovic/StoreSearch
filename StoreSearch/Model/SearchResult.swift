@@ -95,3 +95,8 @@ class SearchResult: Codable, CustomStringConvertible {
     }
 }
 
+// For sorting items in tableview by acending order - this is overloaded function
+func < (lhs: SearchResult, rhs: SearchResult) -> Bool {
+    return lhs.name.localizedStandardCompare(rhs.name) == .orderedAscending
+}
+
