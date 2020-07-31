@@ -112,25 +112,21 @@ extension SearchViewController: UISearchBarDelegate {
             hasSearched = true
             searchResults = []
             
-            let url = iTunesURL(searchText: searchBar.text!)
-            print("URL: '\(url)'")
-            if let data = performStoreRequest(with: url) {
-                searchResults = parse(data: data)
-                // for sorting received data on the screen
-                // 1.  nacin
-//                searchResults.sort(by: { result1, result2 in
-//                    return result1.name.localizedStandardCompare(result2.name) == .orderedAscending
-//                })
-                // 2. nacin
-//                searchResults.sort { $0.name.localizedStandardCompare($1.name) == .orderedAscending}
-                // 3. nacin
-//                searchResults.sort { $0 < $1}
-                // 4. nacin
-                searchResults.sort(by: <)
-                
+            let queve = DispatchQueue.global()
+            let url = self.iTunesURL(searchText: searchBar.text!)
+            
+            queve.async {
+                if let data = self.performStoreRequest(with: url) {
+                    self.searchResults = self.parse(data: data)
+                    self.searchResults.sort(by: <)
+                    DispatchQueue.main.async {
+                        self.isLoading = false
+                        self.tableView.reloadData()
+                    }
+                    return
+                }
             }
-            isLoading = false
-            tableView.reloadData()
+ 
         }
     }
     
