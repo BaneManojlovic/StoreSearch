@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "A68D7E95-6C2D-41AE-B5D4-4D840B3E5B6A"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C9A5F68F-EC3D-4726-8334-66ACC25F7843"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StoreSearch/Controller/SearchViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "searchBarSearchButtonClicked(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4C86E4F4-613F-475A-A387-3CB6DB7C42C8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StoreSearch/Controller/SearchViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "SearchViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "4C86E4F4-613F-475A-A387-3CB6DB7C42C8 - 2e516bcb6c300c34"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StoreSearch.SearchViewController.dataTask.getter : Swift.Optional&lt;__C.NSURLSessionDataTask&gt;"
+                  moduleName = "StoreSearch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/banemanojlovic/Desktop/StoreSearch/StoreSearch/Controller/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "126">
+               </Location>
+               <Location
+                  uuid = "4C86E4F4-613F-475A-A387-3CB6DB7C42C8 - f2c52d5c19d3cc40"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StoreSearch.SearchViewController.dataTask.setter : Swift.Optional&lt;__C.NSURLSessionDataTask&gt;"
+                  moduleName = "StoreSearch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/banemanojlovic/Desktop/StoreSearch/StoreSearch/Controller/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  uuid = "4C86E4F4-613F-475A-A387-3CB6DB7C42C8 - 7cfa0bc205c38c31"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StoreSearch.SearchViewController.dataTask.modify : Swift.Optional&lt;__C.NSURLSessionDataTask&gt;"
+                  moduleName = "StoreSearch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/banemanojlovic/Desktop/StoreSearch/StoreSearch/Controller/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "4C86E4F4-613F-475A-A387-3CB6DB7C42C8 - f31c9a3306637677"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StoreSearch.SearchViewController.dataTask.modify : Swift.Optional&lt;__C.NSURLSessionDataTask&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "StoreSearch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/banemanojlovic/Desktop/StoreSearch/StoreSearch/Controller/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "4C86E4F4-613F-475A-A387-3CB6DB7C42C8 - 8032fcbaf619443c"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StoreSearch.SearchViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; StoreSearch.SearchViewController"
+                  moduleName = "StoreSearch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/banemanojlovic/Desktop/StoreSearch/StoreSearch/Controller/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "653">
+               </Location>
+               <Location
+                  uuid = "4C86E4F4-613F-475A-A387-3CB6DB7C42C8 - 3febd7272e83e100"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StoreSearch.SearchViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;StoreSearch.SearchViewController&gt;"
+                  moduleName = "StoreSearch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/banemanojlovic/Desktop/StoreSearch/StoreSearch/Controller/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "585">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
