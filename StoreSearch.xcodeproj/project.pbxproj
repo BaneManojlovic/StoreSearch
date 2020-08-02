@@ -17,6 +17,8 @@
 		9A80E5BD24D2E92900B5FBB8 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A80E5BB24D2E92900B5FBB8 /* NothingFoundCell.xib */; };
 		9A80E5C024D43EC400B5FBB8 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A80E5BF24D43EC400B5FBB8 /* LoadingCell.xib */; };
 		9A80E5C324D66D3200B5FBB8 /* UIImageView+DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A80E5C224D66D3200B5FBB8 /* UIImageView+DownloadImage.swift */; };
+		9A80E5C524D6D65B00B5FBB8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A80E5C424D6D65B00B5FBB8 /* DetailViewController.swift */; };
+		9A80E5C724D6D9FF00B5FBB8 /* DimmingPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A80E5C624D6D9FF00B5FBB8 /* DimmingPresentationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		9A80E5BB24D2E92900B5FBB8 /* NothingFoundCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
 		9A80E5BF24D43EC400B5FBB8 /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		9A80E5C224D66D3200B5FBB8 /* UIImageView+DownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+DownloadImage.swift"; sourceTree = "<group>"; };
+		9A80E5C424D6D65B00B5FBB8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		9A80E5C624D6D9FF00B5FBB8 /* DimmingPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmingPresentationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				9A80E59D24D29FAD00B5FBB8 /* SearchViewController.swift */,
+				9A80E5C424D6D65B00B5FBB8 /* DetailViewController.swift */,
+				9A80E5C624D6D9FF00B5FBB8 /* DimmingPresentationController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -225,8 +231,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A80E59E24D29FAD00B5FBB8 /* SearchViewController.swift in Sources */,
+				9A80E5C724D6D9FF00B5FBB8 /* DimmingPresentationController.swift in Sources */,
 				9A80E5AE24D2BEFE00B5FBB8 /* SearchResult.swift in Sources */,
 				9A80E5B724D2E3A900B5FBB8 /* SearchResultCell.swift in Sources */,
+				9A80E5C524D6D65B00B5FBB8 /* DetailViewController.swift in Sources */,
 				9A80E59A24D29FAD00B5FBB8 /* AppDelegate.swift in Sources */,
 				9A80E5C324D66D3200B5FBB8 /* UIImageView+DownloadImage.swift in Sources */,
 			);
