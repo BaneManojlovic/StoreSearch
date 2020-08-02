@@ -13,6 +13,7 @@ class SearchViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     // MARK: - Properties
     var searchResults = [SearchResult]()
@@ -39,7 +40,7 @@ class SearchViewController: UIViewController {
     
     // MARK: - Setup Methods
     func setupUI() {
-        tableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: 108, left: 0, bottom: 0, right: 0)
         searchBar.becomeFirstResponder()
         
         // registering tableview cells
@@ -58,6 +59,12 @@ class SearchViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
+    
+    // MARK: - Action Methods
+    @IBAction func segmentChanged(_ sender: UISegmentedControl) {
+        print(sender.selectedSegmentIndex)
+    }
+    
 
     // MARK: - Helper Methods
     func iTunesURL(searchText: String) -> URL {
