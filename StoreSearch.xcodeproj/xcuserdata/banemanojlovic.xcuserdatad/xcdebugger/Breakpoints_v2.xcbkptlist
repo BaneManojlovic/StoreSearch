@@ -14,9 +14,9 @@
             filePath = "StoreSearch/Controller/SearchViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "searchBarSearchButtonClicked(_:)"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "performSearch()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
