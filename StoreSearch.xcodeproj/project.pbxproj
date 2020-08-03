@@ -19,6 +19,7 @@
 		9A80E5C324D66D3200B5FBB8 /* UIImageView+DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A80E5C224D66D3200B5FBB8 /* UIImageView+DownloadImage.swift */; };
 		9A80E5C524D6D65B00B5FBB8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A80E5C424D6D65B00B5FBB8 /* DetailViewController.swift */; };
 		9A80E5C724D6D9FF00B5FBB8 /* DimmingPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A80E5C624D6D9FF00B5FBB8 /* DimmingPresentationController.swift */; };
+		9A80E5C924D7EDEE00B5FBB8 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A80E5C824D7EDEE00B5FBB8 /* GradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		9A80E5C224D66D3200B5FBB8 /* UIImageView+DownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+DownloadImage.swift"; sourceTree = "<group>"; };
 		9A80E5C424D6D65B00B5FBB8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9A80E5C624D6D9FF00B5FBB8 /* DimmingPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmingPresentationController.swift; sourceTree = "<group>"; };
+		9A80E5C824D7EDEE00B5FBB8 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				9A80E5BE24D43EA900B5FBB8 /* LoadingCell */,
 				9A80E5B924D2E8F800B5FBB8 /* NothingFoundCell */,
 				9A80E5B824D2E8E900B5FBB8 /* SearchResultCell */,
+				9A80E5C824D7EDEE00B5FBB8 /* GradientView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				9A80E5B724D2E3A900B5FBB8 /* SearchResultCell.swift in Sources */,
 				9A80E5C524D6D65B00B5FBB8 /* DetailViewController.swift in Sources */,
 				9A80E59A24D29FAD00B5FBB8 /* AppDelegate.swift in Sources */,
+				9A80E5C924D7EDEE00B5FBB8 /* GradientView.swift in Sources */,
 				9A80E5C324D66D3200B5FBB8 /* UIImageView+DownloadImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

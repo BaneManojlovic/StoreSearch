@@ -49,6 +49,7 @@ class DetailViewController: UIViewController {
     // MARK: - Setup Methods
     func setupUI() {
         view.tintColor = UIColor(red: 20/255, green: 160/255, blue: 160/255, alpha: 1)
+        view.backgroundColor = UIColor.clear
         popupView.layer.cornerRadius = 10
     }
     
