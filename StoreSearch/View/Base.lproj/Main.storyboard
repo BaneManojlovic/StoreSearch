@@ -152,6 +152,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="$9.99" backgroundImage="PriceButton"/>
+                                        <connections>
+                                            <action selector="openInStore" destination="kGi-PS-rXp" eventType="touchUpInside" id="pOh-xD-FKf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="0.95242936643835618" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
