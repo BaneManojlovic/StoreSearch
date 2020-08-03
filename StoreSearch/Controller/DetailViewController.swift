@@ -21,6 +21,7 @@ class DetailViewController: UIViewController {
     
     // MARK: - Properties
     var searchResult: SearchResult!
+    var downloadTask: URLSessionDownloadTask?
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -38,6 +39,11 @@ class DetailViewController: UIViewController {
         super.init(coder: aDecoder)
         modalPresentationStyle = .custom
         transitioningDelegate = self
+    }
+    
+    deinit {
+        print("deinit \(self)")
+        downloadTask?.cancel()
     }
     
     // MARK: - Setup Methods
@@ -93,6 +99,11 @@ class DetailViewController: UIViewController {
             priceText = ""
         }
         priceButton.setTitle(priceText, for: .normal)
+        
+        // For getting image
+        if let largeImage = URL(string: searchResult.imageLarge) {
+            downloadTask = artworkImageView.loadImage(url: largeImage)
+        }
     }
     
 }
