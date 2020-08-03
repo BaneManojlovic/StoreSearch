@@ -148,7 +148,7 @@
                                         <rect key="frame" x="170" y="214" width="68" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="61z-fi-nLV"/>
-                                            <constraint firstAttribute="width" constant="68" id="PLb-f5-8rC"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="68" id="PLb-f5-8rC"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="$9.99" backgroundImage="PriceButton"/>
@@ -177,7 +177,7 @@
                                     <constraint firstItem="Fcb-3L-fGK" firstAttribute="leading" secondItem="e2f-al-7wa" secondAttribute="trailing" constant="2" id="mxa-bq-LsS"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cAK-Mp-5sr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cAK-Mp-5sr">
                                 <rect key="frame" x="44" y="272" width="234" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="q3o-fU-5bN"/>
@@ -195,7 +195,7 @@
                             <constraint firstItem="cAK-Mp-5sr" firstAttribute="trailing" secondItem="rNI-mo-2NR" secondAttribute="trailing" id="aSh-2t-xjl"/>
                             <constraint firstItem="JtL-dX-vmw" firstAttribute="centerY" secondItem="yGZ-DX-A5i" secondAttribute="centerY" id="aiw-t2-UaH"/>
                             <constraint firstItem="9ez-ij-2z2" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cAK-Mp-5sr" secondAttribute="trailing" symbolic="YES" id="d5R-Nv-OD5"/>
-                            <constraint firstItem="cAK-Mp-5sr" firstAttribute="leading" secondItem="MNe-yY-k1q" secondAttribute="leading" id="g5N-38-8gT"/>
+                            <constraint firstItem="cAK-Mp-5sr" firstAttribute="leading" secondItem="JtL-dX-vmw" secondAttribute="leading" constant="4" id="g5N-38-8gT"/>
                             <constraint firstItem="WOS-xh-Yor" firstAttribute="trailing" secondItem="cAK-Mp-5sr" secondAttribute="trailing" id="jN9-lo-bEp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9ez-ij-2z2"/>

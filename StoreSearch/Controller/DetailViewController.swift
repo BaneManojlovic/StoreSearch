@@ -18,6 +18,9 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var kindLabel: UILabel!
     @IBOutlet weak var genreLabel: UILabel!
     @IBOutlet weak var priceButton: UIButton!
+    
+    // MARK: - Properties
+    var searchResult: SearchResult!
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -26,6 +29,9 @@ class DetailViewController: UIViewController {
         setupUI()
         setupTargets()
 
+        if searchResult != nil {
+            updateUI()
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -50,6 +56,35 @@ class DetailViewController: UIViewController {
     // MARK: - Action Methods
     @IBAction func close() {
         dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK: - Helper Methods
+    func updateUI() {
+        nameLabel.text = searchResult.name
+        
+        if searchResult.artist.isEmpty {
+            artistNameLabel.text = "Unknown"
+        } else {
+            artistNameLabel.text = searchResult.artist
+        }
+        
+        kindLabel.text = searchResult.type
+        genreLabel.text = searchResult.genre
+        
+        // For showing price on button
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.currencyCode = searchResult.currency
+        let priceText: String
+        
+        if searchResult.price == 0 {
+            priceText = "Free"
+        } else if let text = formatter.string(from: searchResult.price as NSNumber) {
+            priceText = text
+        } else {
+            priceText = ""
+        }
+        priceButton.setTitle(priceText, for: .normal)
     }
     
 }
