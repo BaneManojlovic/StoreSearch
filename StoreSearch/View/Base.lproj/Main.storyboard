@@ -225,24 +225,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tekst for landscape" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVe-WA-7Nn">
-                                <rect key="frame" x="209" y="149.5" width="150" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nO2-Aq-2ax">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="tpu-pc-fny">
+                                <rect key="frame" x="203" y="141" width="162" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="mVe-WA-7Nn" firstAttribute="centerY" secondItem="qgH-un-0k4" secondAttribute="centerY" id="Tc7-GV-l3K"/>
-                            <constraint firstItem="mVe-WA-7Nn" firstAttribute="centerX" secondItem="qgH-un-0k4" secondAttribute="centerX" id="q1G-jn-BMM"/>
+                            <constraint firstItem="nO2-Aq-2ax" firstAttribute="leading" secondItem="qgH-un-0k4" secondAttribute="leading" id="Tnp-6O-JFP"/>
+                            <constraint firstItem="nO2-Aq-2ax" firstAttribute="top" secondItem="qgH-un-0k4" secondAttribute="top" id="UTE-CQ-a0h"/>
+                            <constraint firstAttribute="trailing" secondItem="nO2-Aq-2ax" secondAttribute="trailing" id="sbi-el-Jzr"/>
+                            <constraint firstAttribute="bottom" secondItem="nO2-Aq-2ax" secondAttribute="bottom" id="vxv-GW-Rep"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Lmx-NW-pqE"/>
                     </view>
+                    <connections>
+                        <outlet property="pageControl" destination="tpu-pc-fny" id="g7h-nc-1Ka"/>
+                        <outlet property="scrollView" destination="nO2-Aq-2ax" id="9t1-ve-g5o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SPt-WH-3Wc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2451" y="137"/>
+            <point key="canvasLocation" x="2450.7042253521126" y="136.875"/>
         </scene>
     </scenes>
     <resources>
