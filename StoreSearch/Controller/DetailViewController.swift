@@ -10,6 +10,12 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    // MARK: - Enums
+    enum AnimationStyle {
+        case slide
+        case fade
+    }
+    
     // MARK: - Outlets
     @IBOutlet weak var popupView: UIView!
     @IBOutlet weak var artworkImageView: UIImageView!
@@ -22,6 +28,7 @@ class DetailViewController: UIViewController {
     // MARK: - Properties
     var searchResult: SearchResult!
     var downloadTask: URLSessionDownloadTask?
+    var dismissStyle = AnimationStyle.fade
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -62,6 +69,7 @@ class DetailViewController: UIViewController {
     
     // MARK: - Action Methods
     @IBAction func close() {
+        dismissStyle = .slide
         dismiss(animated: true, completion: nil)
     }
     
@@ -122,8 +130,14 @@ extension DetailViewController: UIViewControllerTransitioningDelegate {
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return SlideOutAnimationController()
+        switch dismissStyle {
+        case .slide:
+            return SlideOutAnimationController()
+        case .fade:
+            return FadeOutAnimationController()
+        }
     }
+
 }
 
 // MARK: - Conforming to UIGestureReckognizerDelegate
