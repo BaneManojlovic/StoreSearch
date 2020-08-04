@@ -17,6 +17,7 @@ class LandscapeViewController: UIViewController {
     // MARK: - Properties
     var searchResults = [SearchResult]()
     private var firstTime = true
+    private var downloads = [URLSessionDownloadTask]()
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -24,6 +25,13 @@ class LandscapeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         setupUI()
+    }
+    
+    deinit {
+        print("deinit \(self)")
+        for task in downloads {
+            task.cancel()
+        }
     }
     
     func setupUI() {
@@ -45,7 +53,25 @@ class LandscapeViewController: UIViewController {
         
     }
     
-    // MARK: - Pverriden Methods
+    private func downloadImage(for searchResult: SearchResult, andPlaceOn button: UIButton) {
+        if let url = URL(string: searchResult.imageSmall) {
+            let task = URLSession.shared.downloadTask(with: url) { [weak button] url, response, error in
+                if error == nil, let url = url,
+                    let data = try? Data(contentsOf: url),
+                    let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        if let button = button {
+                            button.setImage(image, for: .normal)
+                        }
+                    }
+                }
+            }
+            task.resume()
+            downloads.append(task)
+        }
+    }
+    
+    // MARK: - Overriden Methods
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
@@ -115,9 +141,8 @@ class LandscapeViewController: UIViewController {
         var x = marginX
         for (index, result) in searchResults.enumerated() {
         // 1
-        let button = UIButton(type: .system)
-            button.backgroundColor = UIColor.white
-            button.setTitle("\(index)", for: .normal)
+        let button = UIButton(type: .custom)
+            button.setBackgroundImage(UIImage(named: "LandscapeButton"), for: .normal)
             // 2
         button.frame = CGRect(x: x + paddingHorz,
                               y: marginY + CGFloat(row)*itemHeight + paddingVert,
@@ -125,6 +150,10 @@ class LandscapeViewController: UIViewController {
                               height: buttonHeight)
             // 3
             scrollView.addSubview(button)
+            
+            // For adding image on buttons grid
+            downloadImage(for: result, andPlaceOn: button)
+            
             // 4
             row += 1
             if row == rowsPerPage {
