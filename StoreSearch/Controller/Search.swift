@@ -11,6 +11,23 @@ import Foundation
 typealias SearchComplete = (Bool) -> Void
 class Search {
     
+    // MARK: - Enums
+    enum Category: Int {
+        case all = 0
+        case music = 1
+        case software = 2
+        case ebooks = 3
+        
+        var type: String {
+            switch self {
+            case .all: return ""
+            case .music: return "musicTrack"
+            case .software: return "software"
+            case .ebooks: return "ebook"
+            }
+        }
+    }
+    
     // MARK: - Properties
     var searchResults: [SearchResult] = []
     var hasSearched = false
@@ -20,7 +37,7 @@ class Search {
     private var dataTask: URLSessionDataTask? = nil
     
     // MARK: - Methods
-    func performSearch(for text: String, category: Int, completion: @escaping SearchComplete) {
+    func performSearch(for text: String, category: Category, completion: @escaping SearchComplete) {
         print("Searching...")
         
         if !text.isEmpty {
@@ -69,13 +86,13 @@ class Search {
     }
     
     // MARK: - Helper Methods
-    private func iTunesURL(searchText: String, category: Int) -> URL {
+    private func iTunesURL(searchText: String, category: Category) -> URL {
         let kind: String
         switch category {
-        case 1: kind = "musicTrack"
-        case 2: kind = "software"
-        case 3: kind = "ebook"
-        default: kind = ""
+        case .all: kind = ""
+        case .music: kind = "musicTrack"
+        case .software: kind = "software"
+        case .ebooks: kind = "ebook"
         }
         
         let encodedText = searchText.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
