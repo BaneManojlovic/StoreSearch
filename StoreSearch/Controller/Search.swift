@@ -28,10 +28,18 @@ class Search {
         }
     }
     
+    enum State {
+        case notSearchedYet
+        case loading
+        case noResults
+        case results([SearchResult])
+    }
+    
     // MARK: - Properties
-    var searchResults: [SearchResult] = []
-    var hasSearched = false
-    var isLoading = false
+    private(set) var state: State = .notSearchedYet
+//    var searchResults: [SearchResult] = []
+//    var hasSearched = false
+//    var isLoading = false
     
     // MARK: - Private Properties
     private var dataTask: URLSessionDataTask? = nil
@@ -43,15 +51,18 @@ class Search {
         if !text.isEmpty {
             dataTask?.cancel()
             
-            isLoading = true
-            hasSearched = true
-            searchResults = []
+//            isLoading = true
+//            hasSearched = true
+//            searchResults = []
+            state = .loading
             
             let url = iTunesURL(searchText: text, category: category)
             
             let session = URLSession.shared
             
             dataTask = session.dataTask(with: url, completionHandler: { data, response, error in
+                
+                var newState = State.notSearchedYet
                 var success = false
                     // Was search cancelled?
                 if let error = error as NSError?, error.code == -999 {
@@ -59,20 +70,31 @@ class Search {
                 }
                 
                 if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200, let data = data {
-                    self.searchResults = self.parse(data: data)
-                    self.searchResults.sort(by: <)
                     
-                    print("Success!")
-                    self.isLoading = false
+                    var searchResults = self.parse(data: data)
+                    if searchResults.isEmpty {
+                        newState = .noResults
+                    } else {
+                        searchResults.sort(by: <)
+                        newState = .results(searchResults)
+                    }
                     success = true
+                    
+//                    self.searchResults = self.parse(data: data)
+//                    self.searchResults.sort(by: <)
+//
+//                    print("Success!")
+//                    self.isLoading = false
+//                    success = true
                 }
                 
-                if !success {
-                    self.hasSearched = false
-                    self.isLoading = false
-                }
+//                if !success {
+//                    self.hasSearched = false
+//                    self.isLoading = false
+//                }
                 
                 DispatchQueue.main.async {
+                    self.state = newState
                     completion(success)
                 }
                 
