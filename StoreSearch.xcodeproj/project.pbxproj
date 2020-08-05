@@ -24,6 +24,7 @@
 		9A80E5CD24D7F91500B5FBB8 /* SlideOutAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A80E5CC24D7F91500B5FBB8 /* SlideOutAnimationController.swift */; };
 		9A80E5E024D952BF00B5FBB8 /* LandscapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A80E5DF24D952BF00B5FBB8 /* LandscapeViewController.swift */; };
 		9A80E5E224D9894C00B5FBB8 /* FadeOutAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A80E5E124D9894B00B5FBB8 /* FadeOutAnimationController.swift */; };
+		9A80E5EF24DA8F1D00B5FBB8 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A80E5EE24DA8F1D00B5FBB8 /* Search.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		9A80E5CC24D7F91500B5FBB8 /* SlideOutAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOutAnimationController.swift; sourceTree = "<group>"; };
 		9A80E5DF24D952BF00B5FBB8 /* LandscapeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeViewController.swift; sourceTree = "<group>"; };
 		9A80E5E124D9894B00B5FBB8 /* FadeOutAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeOutAnimationController.swift; sourceTree = "<group>"; };
+		9A80E5EE24DA8F1D00B5FBB8 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				9A80E5CC24D7F91500B5FBB8 /* SlideOutAnimationController.swift */,
 				9A80E5DF24D952BF00B5FBB8 /* LandscapeViewController.swift */,
 				9A80E5E124D9894B00B5FBB8 /* FadeOutAnimationController.swift */,
+				9A80E5EE24DA8F1D00B5FBB8 /* Search.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A80E5EF24DA8F1D00B5FBB8 /* Search.swift in Sources */,
 				9A80E59E24D29FAD00B5FBB8 /* SearchViewController.swift in Sources */,
 				9A80E5C724D6D9FF00B5FBB8 /* DimmingPresentationController.swift in Sources */,
 				9A80E5E224D9894C00B5FBB8 /* FadeOutAnimationController.swift in Sources */,
