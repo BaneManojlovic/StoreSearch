@@ -15,7 +15,7 @@ class LandscapeViewController: UIViewController {
     @IBOutlet weak var pageControl: UIPageControl!
     
     // MARK: - Properties
-    var searchResults = [SearchResult]()
+    var search: Search!
     private var firstTime = true
     private var downloads = [URLSessionDownloadTask]()
 
@@ -23,7 +23,6 @@ class LandscapeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         setupUI()
     }
     
@@ -85,7 +84,7 @@ class LandscapeViewController: UIViewController {
         
         if firstTime {
             firstTime = false
-            tileButtons(searchResults)
+            tileButtons(search.searchResults)
         }
     }
     
