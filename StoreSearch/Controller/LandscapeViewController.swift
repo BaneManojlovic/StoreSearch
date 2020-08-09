@@ -98,6 +98,18 @@ class LandscapeViewController: UIViewController {
         }
     }
     
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowDetail" {
+            if case .results(let list) = search.state {
+                let detailViewController = segue.destination as! DetailViewController
+                let searchResult = list[(sender as! UIButton).tag - 2000]
+                detailViewController.searchResult = searchResult
+            }
+            
+        }
+    }
+    
     // MARK: - Public Methods
     func searchResultsReceived() {
         hideSpinner()
@@ -198,6 +210,8 @@ class LandscapeViewController: UIViewController {
         // 1
         let button = UIButton(type: .custom)
             button.setBackgroundImage(UIImage(named: "LandscapeButton"), for: .normal)
+            button.tag = 2000 + index
+            button.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
             // 2
         button.frame = CGRect(x: x + paddingHorz,
                               y: marginY + CGFloat(row)*itemHeight + paddingVert,
@@ -235,6 +249,10 @@ class LandscapeViewController: UIViewController {
         UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseInOut], animations: {
             self.scrollView.contentOffset = CGPoint(x: self.scrollView.bounds.size.width * CGFloat(sender.currentPage), y: 0)
         }, completion: nil)
+    }
+    
+    @objc func buttonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "ShowDetail", sender: sender)
     }
 }
 
