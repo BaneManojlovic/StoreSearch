@@ -91,7 +91,7 @@ class LandscapeViewController: UIViewController {
             case .loading:
                 showSpinner()
             case .noResults:
-                break
+                showNothingFoundLabel()
             case .results(let list):
                 tileButtons(list)
             }
@@ -103,8 +103,10 @@ class LandscapeViewController: UIViewController {
         hideSpinner()
         
         switch search.state {
-        case .notSearchedYet, .loading, .noResults:
+        case .notSearchedYet, .loading:
             break
+        case .noResults:
+            showNothingFoundLabel()
         case .results(let list):
             tileButtons(list)
         }
@@ -112,6 +114,22 @@ class LandscapeViewController: UIViewController {
 
     
     // MARK:- Private Methods
+    private func showNothingFoundLabel() {
+        let label = UILabel(frame: CGRect.zero)
+        label.text = "Nothing Found"
+        label.textColor = UIColor.white
+        label.backgroundColor = UIColor.clear
+        label.sizeToFit()
+        
+        var rect = label.frame
+        rect.size.width = ceil(rect.size.width/2) * 2
+        rect.size.height = ceil(rect.size.height/2) * 2
+        
+        label.center = CGPoint(x: scrollView.bounds.midX,
+                               y: scrollView.bounds.midY)
+        view.addSubview(label)
+    }
+    
     private func showSpinner() {
         let spinner = UIActivityIndicatorView(style: .whiteLarge)
         spinner.center = CGPoint(x: scrollView.bounds.midX + 0.5,
