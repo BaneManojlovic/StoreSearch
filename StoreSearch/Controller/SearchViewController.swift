@@ -51,6 +51,7 @@ class SearchViewController: UIViewController {
     // MARK: - Setup Methods
     func setupUI() {
         tableView.contentInset = UIEdgeInsets(top: 108, left: 0, bottom: 0, right: 0)
+        title = "Search"
         searchBar.becomeFirstResponder()
         
         // registering tableview cells

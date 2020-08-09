@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="landscape" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xYT-EB-Pvq">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -13,24 +13,24 @@
             <objects>
                 <viewController id="BYZ-38-t0r" userLabel="Search" customClass="SearchViewController" customModule="StoreSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3u5-Rl-bZQ">
-                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                             <searchBar contentMode="redraw" placeholder="App name, artist, song, album, e-book" translatesAutoresizingMaskIntoConstraints="NO" id="kKZ-uD-dvF">
-                                <rect key="frame" x="0.0" y="0.0" width="568" height="56"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sqb-gK-8oo">
-                                <rect key="frame" x="0.0" y="56" width="568" height="32"/>
+                                <rect key="frame" x="0.0" y="56" width="320" height="44"/>
                                 <items>
                                     <navigationItem id="gcT-ca-EwO">
                                         <nil key="title"/>
                                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="I7Y-0q-Pf7">
-                                            <rect key="frame" x="134" y="0.0" width="300" height="32"/>
+                                            <rect key="frame" x="10" y="6" width="300" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
                                                 <segment title="All"/>
@@ -77,11 +77,11 @@
             <objects>
                 <viewController id="kGi-PS-rXp" userLabel="Detail" customClass="DetailViewController" customModule="StoreSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yGZ-DX-A5i">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JtL-dX-vmw" userLabel="Pop-up View">
-                                <rect key="frame" x="164" y="40" width="240" height="240"/>
+                                <rect key="frame" x="40" y="154" width="240" height="240"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNe-yY-k1q" userLabel="Close Button">
                                         <rect key="frame" x="4" y="4" width="15" height="18"/>
@@ -181,7 +181,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cAK-Mp-5sr">
-                                <rect key="frame" x="168" y="156" width="234" height="24"/>
+                                <rect key="frame" x="44" y="270" width="234" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="q3o-fU-5bN"/>
                                 </constraints>
@@ -203,6 +203,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9ez-ij-2z2"/>
                     </view>
+                    <navigationItem key="navigationItem" id="E6E-6q-U8O"/>
                     <connections>
                         <outlet property="artistNameLabel" destination="WOS-xh-Yor" id="LzS-XJ-QWQ"/>
                         <outlet property="artworkImageView" destination="koW-YF-blA" id="5Ry-e7-Pyc"/>
@@ -217,16 +218,45 @@
             </objects>
             <point key="canvasLocation" x="935.625" y="137.32394366197184"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pME-1f-SJi">
+            <objects>
+                <navigationController id="HrZ-Nu-9i1" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zP9-sM-0uN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="kGi-PS-rXp" kind="relationship" relationship="rootViewController" id="owG-Vg-WEI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="upu-ba-Zbl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131" y="-716"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="WlN-xa-yD4">
+            <objects>
+                <splitViewController id="xYT-EB-Pvq" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="masterViewController" id="r2Y-de-o2X"/>
+                        <segue destination="HrZ-Nu-9i1" kind="relationship" relationship="detailViewController" id="Fif-vC-hLy"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hb6-rc-JIf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-999" y="-298"/>
+        </scene>
         <!--Landscape-->
         <scene sceneID="ZzE-oM-bVs">
             <objects>
                 <viewController storyboardIdentifier="LandscapeViewController" id="hxN-gW-lsB" userLabel="Landscape" customClass="LandscapeViewController" customModule="StoreSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qgH-un-0k4">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nO2-Aq-2ax">
-                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <connections>
                                     <outlet property="delegate" destination="hxN-gW-lsB" id="j9h-by-owZ"/>
                                 </connections>
@@ -256,7 +286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SPt-WH-3Wc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1720" y="139"/>
+            <point key="canvasLocation" x="936" y="-716"/>
         </scene>
     </scenes>
     <resources>
