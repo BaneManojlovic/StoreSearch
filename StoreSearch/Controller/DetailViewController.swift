@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 class DetailViewController: UIViewController {
     
@@ -26,9 +27,18 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var priceButton: UIButton!
     
     // MARK: - Properties
-    var searchResult: SearchResult!
     var downloadTask: URLSessionDownloadTask?
     var dismissStyle = AnimationStyle.fade
+    var isPopUp = false
+    
+    // MARK: - Computed Properties
+    var searchResult: SearchResult! {
+        didSet {
+            if isViewLoaded {
+                updateUI()
+            }
+        }
+    }
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -53,6 +63,14 @@ class DetailViewController: UIViewController {
         downloadTask?.cancel()
     }
     
+    // MARK: - Overriden methods
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowMenu" {
+            let controller = segue.destination as! MenuViewController
+            controller.delegate = self
+        }
+    }
+    
     // MARK: - Setup Methods
     func setupUI() {
         view.tintColor = UIColor(red: 20/255, green: 160/255, blue: 160/255, alpha: 1)
@@ -61,10 +79,18 @@ class DetailViewController: UIViewController {
     }
     
     func setupTargets() {
-        let gestureReckognizer = UITapGestureRecognizer(target: self, action: #selector(close))
-        gestureReckognizer.cancelsTouchesInView = false
-        gestureReckognizer.delegate = self
-        view.addGestureRecognizer(gestureReckognizer)
+        if isPopUp {
+            let gestureReckognizer = UITapGestureRecognizer(target: self, action: #selector(close))
+            gestureReckognizer.cancelsTouchesInView = false
+            gestureReckognizer.delegate = self
+            view.addGestureRecognizer(gestureReckognizer)
+            view.backgroundColor = UIColor.clear
+        } else {
+            view.backgroundColor = UIColor(patternImage: UIImage(named: "LandscapeBackground")!)
+            popupView.isHidden = true
+            title = "Store Search"
+        }
+        
     }
     
     // MARK: - Action Methods
@@ -113,6 +139,8 @@ class DetailViewController: UIViewController {
         if let largeImage = URL(string: searchResult.imageLarge) {
             downloadTask = artworkImageView.loadImage(url: largeImage)
         }
+        
+        popupView.isHidden = false
     }
     
 }
@@ -145,5 +173,30 @@ extension DetailViewController: UIGestureRecognizerDelegate {
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         return (touch.view === self.view)
+    }
+}
+
+// MARK: - Conforming to MenuViewControllerDelegate
+extension DetailViewController: MenuViewControllerDelegate {
+    
+    func menuViewControllerSendEmail(_ controller: MenuViewController) {
+        dismiss(animated: true) {
+            if MFMailComposeViewController.canSendMail() {
+                let controller = MFMailComposeViewController()
+                controller.mailComposeDelegate = self
+                controller.modalPresentationStyle = .formSheet
+                controller.setSubject("Support Request")
+                controller.setToRecipients(["bane1manojlvic@gmail.com"])
+                self.present(controller, animated: true, completion: nil)
+            }
+        }
+    }
+}
+
+// MARK: - Conforming to MFMailComposeViewControllerDelegate
+extension DetailViewController: MFMailComposeViewControllerDelegate {
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        dismiss(animated: true, completion: nil)
     }
 }

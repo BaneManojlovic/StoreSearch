@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A76AA4824E1285D003E7ED3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A76AA4724E1285D003E7ED3 /* MenuViewController.swift */; };
 		9A80E59A24D29FAD00B5FBB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A80E59924D29FAD00B5FBB8 /* AppDelegate.swift */; };
 		9A80E59E24D29FAD00B5FBB8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A80E59D24D29FAD00B5FBB8 /* SearchViewController.swift */; };
 		9A80E5A124D29FAD00B5FBB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A80E59F24D29FAD00B5FBB8 /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A76AA4724E1285D003E7ED3 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		9A80E59624D29FAD00B5FBB8 /* StoreSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A80E59924D29FAD00B5FBB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A80E59D24D29FAD00B5FBB8 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				9A80E5DF24D952BF00B5FBB8 /* LandscapeViewController.swift */,
 				9A80E5E124D9894B00B5FBB8 /* FadeOutAnimationController.swift */,
 				9A80E5EE24DA8F1D00B5FBB8 /* Search.swift */,
+				9A76AA4724E1285D003E7ED3 /* MenuViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				9A80E5EF24DA8F1D00B5FBB8 /* Search.swift in Sources */,
 				9A80E59E24D29FAD00B5FBB8 /* SearchViewController.swift in Sources */,
 				9A80E5C724D6D9FF00B5FBB8 /* DimmingPresentationController.swift in Sources */,
+				9A76AA4824E1285D003E7ED3 /* MenuViewController.swift in Sources */,
 				9A80E5E224D9894C00B5FBB8 /* FadeOutAnimationController.swift in Sources */,
 				9A80E5AE24D2BEFE00B5FBB8 /* SearchResult.swift in Sources */,
 				9A80E5B724D2E3A900B5FBB8 /* SearchResultCell.swift in Sources */,
